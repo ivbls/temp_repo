@@ -32,7 +32,7 @@ public class ServerHandler {
 
     private static final Charset charset = Charset.forName(ENCODING_STR);
 
-    public void start(int port) throws IOException, SQLException {
+    public void start(int port) throws IOException {
         serverSocket = new ServerSocket(port);
         while (true) {
             new EchoClientHandler(serverSocket.accept()).start();
